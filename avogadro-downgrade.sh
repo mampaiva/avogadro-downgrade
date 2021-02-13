@@ -3,13 +3,14 @@
 #author: Mateus Augusto Martins de Paiva
 #use sudo or su to run this script
 
-echo "deb http://old-releases.ubuntu.com/ubuntu/ artful main restricted universe multiverse" >> /etc/apt/sources.list #add the ubuntu 17.10 repositories
+echo "deb http://br.archive.ubuntu.com/ubuntu/ bionic main restricted universe" >> /etc/apt/sources.list #add the ubuntu 18.04 LTS repositories
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
 apt update 
 
+
 echo "Package:  *avogadro*  
-Pin: release n=artful
-Pin-Priority: 1001 " > /etc/apt/preferences.d/avogadro1 # change the priority of package versions
+Pin: release n=bionic
+Pin-Priority: 1001 " > /etc/apt/preferences.d/avogadro # change the priority of package versions
 
 apt purge avogadro
 apt autoremove
