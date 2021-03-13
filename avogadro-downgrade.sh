@@ -4,8 +4,8 @@
 #use sudo or su to run this script
 
 echo "deb http://br.archive.ubuntu.com/ubuntu/ bionic main restricted universe" >> /etc/apt/sources.list #add the ubuntu 18.04 LTS repositories
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
-apt update 
+apt update --allow-unauthenticated
+apt update --allow-insecure-repositories
 
 
 echo "Package:  *avogadro*  
