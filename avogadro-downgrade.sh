@@ -10,8 +10,13 @@ apt update --allow-insecure-repositories
 
 echo "Package:  *avogadro*  
 Pin: release n=bionic
+Pin-Priority: 1001 
+
+Package:  *libqt*  
+Pin: release n=bionic
 Pin-Priority: 1001 " > /etc/apt/preferences.d/avogadro # change the priority of package versions
 
+apt upgrade --allow-downgrades
 apt purge avogadro
 apt autoremove
 apt install avogadro 
